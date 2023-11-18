@@ -1,81 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Addition Example</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            margin: 20px;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        label {
-            display: block;
-            margin: 10px 0;
-        }
-
-        input {
-            padding: 8px;
-            margin: 5px;
-            width: 80%;
-            box-sizing: border-box;
-        }
-
-        button {
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        #result {
-            font-size: 18px;
-            color: #333;
-            margin-top: 20px;
-        }
-    </style>
-    <script>
-        function addNumbers() {
-            var num1 = document.getElementById("num1").value;
-            var num2 = document.getElementById("num2").value;
-
-            num1 = parseFloat(num1);
-            num2 = parseFloat(num2);
-
-            if (!isNaN(num1) && !isNaN(num2)) {
-                var result = num1 + num2;
-                document.getElementById("result").innerHTML = "Result: " + result;
-            } else {
-                document.getElementById("result").innerHTML = "Invalid input. Please enter valid numbers.";
-            }
-        }
-    </script>
+ <title>Calculator</title>
+ <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-
-    <h1>Addition Example</h1>
-
-    <label for="num1">Enter Number 1:</label>
-    <input type="text" id="num1" />
-
-    <label for="num2">Enter Number 2:</label>
-    <input type="text" id="num2" />
-
-    <button onclick="addNumbers()">Add</button>
-
-    <p id="result"></p>
-
+ <h1>Calculator</h1>
+ <form id="calculator">
+    <input type="number" id="number1" placeholder="Enter first number">
+    <input type="number" id="number2" placeholder="Enter second number">
+    <select id="operations">
+      <option value="add">Addition</option>
+      <option value="subtract">Subtraction</option>
+      <option value="multiply">Multiplication</option>
+      <option value="divide">Division</option>
+    </select>
+    <button type="button" onclick="calculate()">Calculate</button>
+ </form>
+ <h2 id="result"></h2>
+ <script src="script.js"></script>
 </body>
 </html>
